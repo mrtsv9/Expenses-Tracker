@@ -5,4 +5,8 @@
     <string name="transactions">Transactions</string>
     <string name="profile">Profile</string>
     <string name="title">Just title</string>
+    <string name="welcome">Welcome to Expenses Tracker!</string>
+    <string name="Please_log_in">Please Log in or create a new profile</string>
+    <string name="enter_login">Enter login</string>
+    <string name="enter_password">Enter password</string>
 </resources>
