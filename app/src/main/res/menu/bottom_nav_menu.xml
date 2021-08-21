@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/miAccounts"
+        android:title="@string/accounts"
+        android:icon="@drawable/ic_accounts"/>
+
+    <item android:id="@+id/miCategories"
+        android:title="@string/categories"
+        android:icon="@drawable/ic_categories"/>
+
+    <item android:id="@+id/placeholder"
+        android:title=""/>
+
+    <item android:id="@+id/miTransactions"
+        android:title="@string/transactions"
+        android:icon="@drawable/ic_transactions"/>
+
+    <item android:id="@+id/miProfile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_profile"/>
+
+</menu>
