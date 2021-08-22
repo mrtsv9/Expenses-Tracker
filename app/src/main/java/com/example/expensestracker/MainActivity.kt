@@ -3,6 +3,8 @@ package com.example.expensestracker
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.expensestracker.databinding.ActivityMainBinding
+import com.example.expensestracker.login.LoginFragment
+import com.example.expensestracker.main.MainFragment
 import org.koin.android.ext.android.bind
 
 private lateinit var binding: ActivityMainBinding
@@ -14,6 +16,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 //        binding.bottomNavView.background = null
 //        binding.bottomNavView.menu.getItem(2).isEnabled = false
+        showFragment()
+    }
 
+    private fun showFragment() {
+        supportFragmentManager.beginTransaction()
+            .add(binding.navHostFragment.id, LoginFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun replaceFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.navHostFragment.id, MainFragment())
+            .addToBackStack(null)
+            .commit()
     }
 }

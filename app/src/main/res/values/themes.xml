@@ -34,4 +34,12 @@
         <item name="android:textStyle">italic</item>
     </style>
 
+    <style name="ButtonTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@drawable/button_confirm</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">monospace</item>
+    </style>
+
 </resources>
