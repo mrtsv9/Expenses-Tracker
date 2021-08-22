@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/drawable-v24/button_submit.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/drawable-v24/login_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/drawable/ic_accounts.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/drawable/ic_salary.xml" value="0.3828125" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/drawable/ic_settings.xml" value="0.3509259259259259" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/drawable/ic_transactions.xml" value="0.3509259259259259" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/dsa.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.35555555555555557" />
       </map>
