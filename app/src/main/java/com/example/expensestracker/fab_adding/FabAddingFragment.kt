@@ -1,4 +1,4 @@
-package com.example.expensestracker.fab
+package com.example.expensestracker.fab_adding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.expensestracker.databinding.FragmentAddingBinding
-import com.example.expensestracker.databinding.FragmentCategoriesBinding
 
-class FabFragment() : Fragment() {
+class FabAddingFragment() : Fragment() {
 
     private var binding: FragmentAddingBinding? = null
 

@@ -6,17 +6,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.expensestracker.MainActivity
 import com.example.expensestracker.R
 import com.example.expensestracker.accounts.AccountsFragment
-import com.example.expensestracker.bottomNav.Navigation
 import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.databinding.FragmentMainBinding
-import com.example.expensestracker.fab.FabFragment
+import com.example.expensestracker.fab_adding.FabAddingFragment
 import com.example.expensestracker.profile.ProfileFragment
 import com.example.expensestracker.transactions.TransactionsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import org.koin.android.ext.android.bind
 
 class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -50,8 +47,9 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
 
     private fun onClickListener() {
         childFragmentManager.beginTransaction()
-            .replace(binding?.container?.id!!, FabFragment())
+            .replace(binding?.container?.id!!, FabAddingFragment())
             .commit()
+        binding?.tvTitle?.text = resources.getString(R.string.new_operation)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -60,22 +58,26 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         var id = item.itemId
 //        Navigation().updateFragment(navView, item.itemId, binding?.container)
         when (id) {
-            2131230956 -> childFragmentManager.beginTransaction()
+            2131230956 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, AccountsFragment())
                 .addToBackStack(null)
                 .commit()
-            2131230957 -> childFragmentManager.beginTransaction()
+                binding?.tvTitle?.text =  item.title }
+            2131230957 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, CategoriesFragment())
                 .addToBackStack(null)
                 .commit()
-            2131230959 -> childFragmentManager.beginTransaction()
+                binding?.tvTitle?.text =  item.title }
+            2131230959 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, TransactionsFragment())
                 .addToBackStack(null)
                 .commit()
-            2131230958 -> childFragmentManager.beginTransaction()
+                binding?.tvTitle?.text =  item.title }
+            2131230958 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, ProfileFragment())
                 .addToBackStack(null)
                 .commit()
+                binding?.tvTitle?.text =  item.title }
         }
 
         return true
