@@ -12,9 +12,11 @@ import com.example.expensestracker.accounts.AccountsFragment
 import com.example.expensestracker.bottomNav.Navigation
 import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.databinding.FragmentMainBinding
+import com.example.expensestracker.fab.FabFragment
 import com.example.expensestracker.profile.ProfileFragment
 import com.example.expensestracker.transactions.TransactionsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.koin.android.ext.android.bind
 
 class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -37,12 +39,19 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         navView?.background = null
         navView?.menu?.getItem(2)?.isEnabled = false
         navView?.setOnNavigationItemSelectedListener(this)
-
+        val fab = binding?.fab
+        fab?.setOnClickListener { onClickListener() }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    private fun onClickListener() {
+        childFragmentManager.beginTransaction()
+            .replace(binding?.container?.id!!, FabFragment())
+            .commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
