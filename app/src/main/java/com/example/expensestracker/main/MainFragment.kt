@@ -2,14 +2,21 @@ package com.example.expensestracker.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.expensestracker.MainActivity
+import com.example.expensestracker.R
+import com.example.expensestracker.bottomNav.Navigation
+import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.databinding.FragmentMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainFragment() : Fragment() {
+class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private var binding: FragmentMainBinding? = null
+    private var navView: BottomNavigationView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,12 +29,32 @@ class MainFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.bottomNavView?.background = null
-        binding?.bottomNavView?.menu?.getItem(2)?.isEnabled = false
+
+        navView = binding?.bottomNavView
+        navView?.background = null
+        navView?.menu?.getItem(2)?.isEnabled = false
+        navView?.setOnNavigationItemSelectedListener(this)
+
     }
 
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        navView = binding?.bottomNavView
+        val container = binding?.container
+        var id = item.itemId
+//        Navigation().updateFragment(navView, item.itemId, binding?.container)
+        when (id) {
+
+            2131230957 -> childFragmentManager.beginTransaction()
+                .add(container?.id!!, CategoriesFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        return true
     }
 }
