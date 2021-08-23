@@ -6,12 +6,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.expensestracker.MainActivity
 import com.example.expensestracker.R
 import com.example.expensestracker.accounts.AccountsFragment
 import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.databinding.FragmentMainBinding
 import com.example.expensestracker.fab_adding.FabAddingFragment
 import com.example.expensestracker.profile.ProfileFragment
+import com.example.expensestracker.settings.SettingsFragment
 import com.example.expensestracker.transactions.TransactionsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -31,13 +33,16 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fixBottomNavView()
+        whenFirstTimeOpened()
 
         navView = binding?.bottomNavView
-        navView?.background = null
-        navView?.menu?.getItem(2)?.isEnabled = false
-        navView?.setOnNavigationItemSelectedListener(this)
         val fab = binding?.fab
-        fab?.setOnClickListener { onClickListener() }
+        val settings = binding?.ivSettings
+
+        navView?.setOnNavigationItemSelectedListener(this)
+        fab?.setOnClickListener { onFabClicked() }
+        settings?.setOnClickListener { onSettingsClicked() }
     }
 
     override fun onDestroy() {
@@ -45,11 +50,31 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         binding = null
     }
 
-    private fun onClickListener() {
+    private fun fixBottomNavView() {
+        navView = binding?.bottomNavView
+        navView?.background = null
+        navView?.menu?.getItem(2)?.isEnabled = false
+    }
+
+    private fun whenFirstTimeOpened() {
+        val container = binding?.container
+        navView = binding?.bottomNavView
+        childFragmentManager.beginTransaction()
+            .replace(container?.id!!, AccountsFragment())
+            .addToBackStack(null)
+            .commit()
+        binding?.tvTitle?.text =  navView?.menu?.getItem(0)?.title
+    }
+
+    private fun onFabClicked() {
         childFragmentManager.beginTransaction()
             .replace(binding?.container?.id!!, FabAddingFragment())
             .commit()
         binding?.tvTitle?.text = resources.getString(R.string.new_operation)
+    }
+
+    private fun onSettingsClicked() {
+        (activity as? MainActivity)?.replaceFragment(SettingsFragment())
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -79,7 +104,7 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
                 .commit()
                 binding?.tvTitle?.text =  item.title }
         }
-
         return true
     }
+
 }
