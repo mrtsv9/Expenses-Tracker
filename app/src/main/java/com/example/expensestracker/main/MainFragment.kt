@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.expensestracker.MainActivity
 import com.example.expensestracker.R
+import com.example.expensestracker.accounts.AccountsFragment
 import com.example.expensestracker.bottomNav.Navigation
 import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.databinding.FragmentMainBinding
+import com.example.expensestracker.profile.ProfileFragment
+import com.example.expensestracker.transactions.TransactionsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -48,9 +51,20 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         var id = item.itemId
 //        Navigation().updateFragment(navView, item.itemId, binding?.container)
         when (id) {
-
+            2131230956 -> childFragmentManager.beginTransaction()
+                .replace(container?.id!!, AccountsFragment())
+                .addToBackStack(null)
+                .commit()
             2131230957 -> childFragmentManager.beginTransaction()
-                .add(container?.id!!, CategoriesFragment())
+                .replace(container?.id!!, CategoriesFragment())
+                .addToBackStack(null)
+                .commit()
+            2131230959 -> childFragmentManager.beginTransaction()
+                .replace(container?.id!!, TransactionsFragment())
+                .addToBackStack(null)
+                .commit()
+            2131230958 -> childFragmentManager.beginTransaction()
+                .replace(container?.id!!, ProfileFragment())
                 .addToBackStack(null)
                 .commit()
         }
