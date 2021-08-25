@@ -10,7 +10,7 @@
     <string name="enter_login">Enter login</string>
     <string name="enter_password">Enter password</string>
     <string name="confirm">Confirm</string>
-    <string name="new_operation">New Operation</string>
+    <string name="new_transaction">New Transaction</string>
     <string name="field_cant_be_empty">Field can not be empty</string>
     <string name="it_is_too_long">It is too long</string>
     <string name="incorrect_value">Incorrect value!</string>
