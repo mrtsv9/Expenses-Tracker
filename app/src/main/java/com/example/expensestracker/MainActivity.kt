@@ -2,6 +2,7 @@ package com.example.expensestracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.example.expensestracker.databinding.ActivityMainBinding
 import com.example.expensestracker.login.LoginFragment
 import com.example.expensestracker.main.MainFragment
@@ -26,9 +27,9 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    fun replaceFragment() {
+    fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(binding.navHostFragment.id, MainFragment())
+            .replace(binding.navHostFragment.id, fragment)
             .addToBackStack(null)
             .commit()
     }
