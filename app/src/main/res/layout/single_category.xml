@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/CategoriesText"
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="text"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivCategory"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/ic_shopping_basket"/>
+
+    <TextView
+        style="@style/CategoriesText"
+        android:id="@+id/tvCategoryBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="300$"/>
+
+</LinearLayout>

@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <GridView
+        android:id="@+id/gvCategories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black" />
+        android:layout_marginStart="12dp"
+        android:columnWidth="140dp"
+        android:horizontalSpacing="16dp"
+        android:numColumns="3"
+        android:verticalSpacing="12dp"
+        tools:listitem="@layout/single_category"
+        android:layout_marginTop="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <TextView-->
+<!--        android:id="@+id/tvProducts"-->
+<!--        style="@style/LoginText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="@string/products"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.05"/>-->
+
+<!--    <androidx.appcompat.widget.AppCompatImageButton-->
+<!--        android:id="@+id/ivProducts"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:src="@drawable/ic_shopping_basket"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/tvProducts"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvProducts"-->
+<!--        android:layout_marginTop="8dp"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvCafe"-->
+<!--        style="@style/LoginText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/cafe"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.375"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tvProducts" />-->
+
+<!--    <androidx.appcompat.widget.AppCompatImageButton-->
+<!--        android:id="@+id/ivCafe"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="end"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:src="@drawable/ic_shopping_basket"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/tvCafe"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/tvCafe"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvCafe"-->
+<!--        android:layout_marginTop="8dp"/>-->
+
+</LinearLayout>

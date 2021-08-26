@@ -18,4 +18,6 @@
     <string name="wallet">Wallet</string>
     <string name="card">Card</string>
     <string name="add_account">Add account</string>
+    <string name="products">Products</string>
+    <string name="cafe">Cafe</string>
 </resources>
