@@ -16,7 +16,7 @@
         android:numColumns="3"
         android:verticalSpacing="12dp"
         tools:listitem="@layout/single_category"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="20dp"/>
 
     <!--    <TextView-->
 <!--        android:id="@+id/tvProducts"-->
