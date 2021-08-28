@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        binding.bottomNavView.background = null
-//        binding.bottomNavView.menu.getItem(2).isEnabled = false
         showFragment()
     }
 
@@ -30,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.navHostFragment.id, fragment)
-            .addToBackStack(null)
             .commit()
     }
 }

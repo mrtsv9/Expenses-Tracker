@@ -80,25 +80,23 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         navView = binding?.bottomNavView
         val container = binding?.container
-        var id = item.itemId
-//        Navigation().updateFragment(navView, item.itemId, binding?.container)
-        when (id) {
-            2131230956 -> { childFragmentManager.beginTransaction()
+        when (item.itemId) {
+            2131230963 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, AccountsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131230957 -> { childFragmentManager.beginTransaction()
+            2131230964 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, CategoriesFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131230959 -> { childFragmentManager.beginTransaction()
+            2131230966 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, TransactionsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131230958 -> { childFragmentManager.beginTransaction()
+            2131230965 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, ProfileFragment())
                 .addToBackStack(null)
                 .commit()
