@@ -28,12 +28,12 @@ class CategoriesFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var gridView = binding?.gvCategories
+        val gridView = binding?.gvCategories
         categoriesList = ArrayList()
-        categoriesList = CategoriesFactory().createCategories(categoriesList!!)
+        categoriesList = CategoriesFactory.createCategories(categoriesList!!)
         categoriesAdapter = activity?.applicationContext?.let { CategoriesAdapter(it,
-            categoriesList!!
-        ) }
+            categoriesList!!) }
+
         gridView?.adapter = categoriesAdapter
     }
 
