@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.navHostFragment.id, fragment)
-            .addToBackStack(null)
             .commit()
     }
 }

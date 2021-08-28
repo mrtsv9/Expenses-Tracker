@@ -31,12 +31,12 @@ class CategoriesAdapter(
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view: View = View.inflate(context, R.layout.single_category, null)
-        var categoryText: TextView = view.findViewById(R.id.tvCategory)
-        var categoryImage: ImageView = view.findViewById(R.id.ivCategory)
-        var categoryBalance: TextView = view.findViewById(R.id.tvCategoryBalance)
+        val view: View = View.inflate(context, R.layout.single_category, null)
+        val categoryText: TextView = view.findViewById(R.id.tvCategory)
+        val categoryImage: ImageView = view.findViewById(R.id.ivCategory)
+        val categoryBalance: TextView = view.findViewById(R.id.tvCategoryBalance)
 
-        var listItem = list[position]
+        val listItem = list[position]
 
         categoryText.text = listItem.name
         categoryImage.setImageResource(listItem.image!!)

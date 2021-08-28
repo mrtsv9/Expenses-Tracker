@@ -2,7 +2,7 @@ package com.example.expensestracker.categories
 
 import com.example.expensestracker.R
 
-class CategoriesFactory {
+object CategoriesFactory {
 
     fun createCategories(list: ArrayList<SingleCategory>): ArrayList<SingleCategory> {
         list.add(SingleCategory("Products", R.drawable.ic_shopping_basket, 300))
