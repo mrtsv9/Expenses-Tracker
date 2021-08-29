@@ -1,14 +1,18 @@
 package com.example.expensestracker.accounts
 
+import android.app.Application
 import com.example.expensestracker.R
+import com.example.expensestracker.database.AccountEntity
+import com.example.expensestracker.viewModels.AccountsViewModel
 
-object AccountsFactory {
+object AccountsFactory: Application() {
 
-    fun createBaseAccounts(list: ArrayList<SingleAccount>): ArrayList<SingleAccount> {
-        list.add(SingleAccount("Wallet",R.drawable.ic_wallet, 30))
-        list.add(SingleAccount("Card", R.drawable.ic_credit_card, 30))
+    fun createWallet(): AccountEntity {
+        return AccountEntity("Wallet",R.drawable.ic_wallet, 0)
+    }
 
-        return list
+    fun createCard(): AccountEntity {
+        return AccountEntity("Card", R.drawable.ic_credit_card, 0)
     }
 
 }

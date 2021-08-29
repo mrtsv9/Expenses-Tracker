@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.expensestracker.databinding.FragmentAddingBinding
-import org.koin.android.ext.android.bind
 
 class FabAddingFragment() : Fragment() {
 

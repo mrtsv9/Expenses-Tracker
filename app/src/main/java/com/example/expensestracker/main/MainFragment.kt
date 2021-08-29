@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.expensestracker.MainActivity
 import com.example.expensestracker.R
+import com.example.expensestracker.accounts.AccountAddingFragment
 import com.example.expensestracker.accounts.AccountsFragment
 import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.databinding.FragmentMainBinding
@@ -81,22 +82,22 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         navView = binding?.bottomNavView
         val container = binding?.container
         when (item.itemId) {
-            2131230963 -> { childFragmentManager.beginTransaction()
+            2131230967 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, AccountsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131230964 -> { childFragmentManager.beginTransaction()
+            2131230968 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, CategoriesFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131230966 -> { childFragmentManager.beginTransaction()
+            2131230970 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, TransactionsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131230965 -> { childFragmentManager.beginTransaction()
+            2131230969 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, ProfileFragment())
                 .addToBackStack(null)
                 .commit()

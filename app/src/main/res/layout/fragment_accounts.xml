@@ -23,16 +23,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:text="300$"
+        android:text="0"
         android:textColor="#1D7DD3"
         app:layout_constraintBottom_toBottomOf="@+id/tvAccounts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvAccounts" />
 
-    <GridView
-        android:id="@+id/gvAccounts"
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintHeight_max="400dp"
+        android:id="@+id/rvAccounts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         android:numColumns="1"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,125 +41,46 @@
         tools:listitem="@layout/single_account"
         android:layout_marginTop="50dp"/>
 
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibAddAccount"
+        android:background="@android:color/transparent"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@id/rvAccounts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
 
-<!--    <ImageView-->
-<!--        android:id="@+id/ivWallet"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:src="@drawable/ic_wallet"-->
-<!--        android:text="@string/your_accounts"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:layout_marginTop="26dp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tvAccounts"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tvAccounts" />-->
+    <ImageView
+        android:id="@+id/ivAddAccount"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_treasure"
+        app:layout_constraintTop_toTopOf="@id/ibAddAccount"
+        app:layout_constraintStart_toStartOf="@id/ibAddAccount"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/ibAddAccount"/>
 
-<!--    <TextView-->
-<!--        android:id="@+id/tvWallet"-->
-<!--        style="@style/LoginText"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:textSize="20sp"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/wallet"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/ivWallet"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/ivWallet"-->
-<!--        android:layout_marginStart="16dp"/>-->
+    <TextView
+        style="@style/LoginText"
+        android:textColor="#1D7DD3"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/add_account"
+        app:layout_constraintBottom_toBottomOf="@+id/ivAddAccount"
+        app:layout_constraintStart_toEndOf="@id/ivAddAccount"
+        app:layout_constraintTop_toTopOf="@id/ivAddAccount" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tvWalletBalance"-->
-<!--        style="@style/LoginText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="300$"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/ivWallet"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tvWallet" />-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="2dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:background="#27292E"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tvWallet"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/ivWallet" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/ivCard"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:src="@drawable/ic_credit_card"-->
-<!--        android:text="@string/your_accounts"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/ivWallet"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/ivWallet" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tvCard"-->
-<!--        style="@style/LoginText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/card"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/ivCard"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/ivCard"-->
-<!--        android:layout_marginStart="16dp"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tvCardBalance"-->
-<!--        style="@style/LoginText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="300$"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/ivCard"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tvCard" />-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="2dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:background="#27292E"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/tvCard"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/ivCard" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/ivNewAccount"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:src="@drawable/ic_money_bag"-->
-<!--        android:text="@string/your_accounts"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/ivCard"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/ivCard"-->
-<!--        android:layout_marginTop="24dp"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tvNewAccount"-->
-<!--        style="@style/LoginText"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/add_account"-->
-<!--        android:textColor="#1D7DD3"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/ivNewAccount"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/ivNewAccount"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/ivNewAccount"-->
-<!--        android:layout_marginStart="16dp"/>-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="2dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:background="#27292E"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/ivNewAccount" />-->
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/accountsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

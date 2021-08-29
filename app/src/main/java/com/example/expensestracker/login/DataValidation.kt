@@ -1,8 +1,6 @@
 package com.example.expensestracker.login
 
 import android.app.Activity
-import com.example.expensestracker.MainActivity
-import com.example.expensestracker.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
