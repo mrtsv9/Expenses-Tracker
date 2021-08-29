@@ -48,6 +48,7 @@ class AccountsFragment : Fragment() {
     }
 
     private fun createBaseAccounts() {
+        //
         viewModel.addAccount(AccountsFactory.createCard())
         viewModel.addAccount(AccountsFactory.createWallet())
     }
