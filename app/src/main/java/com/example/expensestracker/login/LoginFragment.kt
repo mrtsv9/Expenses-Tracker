@@ -16,7 +16,7 @@ import com.example.expensestracker.login.DataValidation.validateData
 import com.example.expensestracker.main.MainFragment
 import com.example.expensestracker.viewModels.LoginViewModel
 
-class LoginFragment() : Fragment() {
+class LoginFragment : Fragment() {
 
     private var binding: FragmentLoginBinding? = null
     private val viewModel: LoginViewModel by viewModels()

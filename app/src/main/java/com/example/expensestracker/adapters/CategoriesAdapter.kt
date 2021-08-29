@@ -1,16 +1,13 @@
 package com.example.expensestracker.adapters
 
 import android.content.Context
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.expensestracker.R
 import com.example.expensestracker.categories.SingleCategory
-import org.w3c.dom.Text
 
 class CategoriesAdapter(
     var context: Context,

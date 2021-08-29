@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.expensestracker.databinding.FragmentAccountsBinding
-import com.example.expensestracker.databinding.FragmentCategoriesBinding
 import com.example.expensestracker.databinding.FragmentProfileBinding
-import com.example.expensestracker.databinding.FragmentTransactionsBinding
 
 class ProfileFragment() : Fragment() {
 
