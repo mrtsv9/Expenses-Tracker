@@ -9,14 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.expensestracker.R
 import com.example.expensestracker.adapters.AccountsAdapter
-import com.example.expensestracker.database.AccountEntity
 import com.example.expensestracker.databinding.FragmentAccountsBinding
+import com.example.expensestracker.main.MainFragment
 import com.example.expensestracker.viewModels.AccountsViewModel
-import kotlinx.coroutines.delay
-import java.util.*
-import kotlin.concurrent.schedule
 
 class AccountsFragment : Fragment() {
 
@@ -36,6 +32,7 @@ class AccountsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         createBaseAccounts()
+        val buttonAdd = binding?.ibAddAccount
 
         val adapter = AccountsAdapter()
         binding?.rvAccounts?.layoutManager = LinearLayoutManager(binding?.root?.context,
@@ -45,10 +42,11 @@ class AccountsFragment : Fragment() {
             adapter.setData(it)
         })
 
+        buttonAdd?.setOnClickListener { onClickListener() }
+
     }
 
     private fun createBaseAccounts() {
-        //
         viewModel.addAccount(AccountsFactory.createCard())
         viewModel.addAccount(AccountsFactory.createWallet())
     }
@@ -56,6 +54,14 @@ class AccountsFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    private fun onClickListener() {
+        val container = binding?.accountsContainer
+        container?.visibility = View.VISIBLE
+        childFragmentManager.beginTransaction()
+            .add(container?.id!!, AccountAddingFragment())
+            .commit()
     }
 
 }
