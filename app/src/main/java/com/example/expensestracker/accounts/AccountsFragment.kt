@@ -1,21 +1,28 @@
 package com.example.expensestracker.accounts
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.expensestracker.R
 import com.example.expensestracker.adapters.AccountsAdapter
+import com.example.expensestracker.database.AccountEntity
 import com.example.expensestracker.databinding.FragmentAccountsBinding
-import com.example.expensestracker.databinding.FragmentCategoriesBinding
-import org.koin.android.ext.android.bind
+import com.example.expensestracker.viewModels.AccountsViewModel
+import kotlinx.coroutines.delay
+import java.util.*
+import kotlin.concurrent.schedule
 
-class AccountsFragment() : Fragment() {
+class AccountsFragment : Fragment() {
 
     private var binding: FragmentAccountsBinding? = null
-    private var accountsList: ArrayList<SingleAccount>? = null
-    private var accountsAdapter: AccountsAdapter? = null
+    private val viewModel: AccountsViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,13 +35,21 @@ class AccountsFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val gridView = binding?.gvAccounts
-        accountsList = ArrayList()
-        accountsList = AccountsFactory.createBaseAccounts(accountsList!!)
-        accountsAdapter = activity?.applicationContext?.let { AccountsAdapter(it,
-            accountsList!!) }
+        createBaseAccounts()
 
-        gridView?.adapter = accountsAdapter
+        val adapter = AccountsAdapter()
+        binding?.rvAccounts?.layoutManager = LinearLayoutManager(binding?.root?.context,
+            LinearLayoutManager.VERTICAL, false)
+        binding?.rvAccounts?.adapter = adapter
+        viewModel.readAllData.observe(viewLifecycleOwner, Observer {
+            adapter.setData(it)
+        })
+
+    }
+
+    private fun createBaseAccounts() {
+        viewModel.addAccount(AccountsFactory.createCard())
+        viewModel.addAccount(AccountsFactory.createWallet())
     }
 
     override fun onDestroy() {
