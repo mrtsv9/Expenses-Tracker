@@ -8,11 +8,11 @@ import com.example.expensestracker.viewModels.AccountsViewModel
 object AccountsFactory: Application() {
 
     fun createWallet(): AccountEntity {
-        return AccountEntity("Wallet",R.drawable.ic_wallet, 300)
+        return AccountEntity("Wallet",R.drawable.ic_wallet, 0)
     }
 
     fun createCard(): AccountEntity {
-        return AccountEntity("Card", R.drawable.ic_credit_card, 300)
+        return AccountEntity("Card", R.drawable.ic_credit_card, 0)
     }
 
 }

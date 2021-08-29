@@ -10,5 +10,6 @@ data class AccountEntity(
     @PrimaryKey(autoGenerate = false)
     val name: String,
     val image: Int?,
+    @ColumnInfo(name = "balance")
     var balance: Int?
 )

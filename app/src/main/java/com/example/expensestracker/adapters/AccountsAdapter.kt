@@ -40,7 +40,12 @@ class AccountsAdapter : RecyclerView.Adapter<AccountsAdapter.MyViewHolder>() {
         holder.bind(list[position])
     }
 
-    fun setData(account: List<AccountEntity>) {
+    fun setData(account: List<AccountEntity>, tvBalance: TextView?) {
+        var amount = Integer.parseInt(tvBalance?.text?.toString())
+        account.forEach {
+            amount += it.balance!!
+        }
+        tvBalance?.text = amount.toString()
         this.list = account
         notifyDataSetChanged()
     }

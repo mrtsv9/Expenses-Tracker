@@ -16,6 +16,6 @@ interface AccountDao {
     @Query("SELECT * FROM accounts ORDER BY name ASC")
     fun readAllData(): Flow<List<AccountEntity>>
 
-
-
+    @Query("SELECT balance FROM accounts")
+    fun getSummaryBalance(): Flow<List<Int>>
 }
