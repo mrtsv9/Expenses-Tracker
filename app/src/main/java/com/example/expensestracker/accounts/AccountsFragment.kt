@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
@@ -34,7 +33,7 @@ class AccountsFragment : Fragment() {
         createBaseAccounts()
         val buttonAdd = binding?.ibAddAccount
 
-        val adapter = AccountsAdapter()
+        val adapter = AccountsAdapter() {}
         binding?.rvAccounts?.layoutManager = LinearLayoutManager(binding?.root?.context,
             LinearLayoutManager.VERTICAL, false)
         binding?.rvAccounts?.adapter = adapter

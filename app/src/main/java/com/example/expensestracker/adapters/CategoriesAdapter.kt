@@ -33,14 +33,16 @@ class CategoriesAdapter(
         val categoryImage: ImageView = view.findViewById(R.id.ivCategory)
         val categoryBalance: TextView = view.findViewById(R.id.tvCategoryBalance)
 
-        val listItem = list[position]
 
+
+        val listItem = list[position]
         categoryText.text = listItem.name
         categoryImage.setImageResource(listItem.image!!)
         categoryBalance.text = listItem.totalPrice.toString()
 
-
         return view
     }
+
+
 
 }

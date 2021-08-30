@@ -5,27 +5,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:hint="Enter some data"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/buttonSelectingAccount"
+        style="@style/ButtonAccountAdding"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/select_account_to_pay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSelectedAccount"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="@string/your_accounts"
+        android:textColor="#1D7DD3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSelectingAccount"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="12dp"/>
+<!--                    android:src="@drawable/ic_wallet"-->
+
+
+    <TextView
+        android:id="@+id/tvSelectedAccountName"
+        style="@style/LoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#1D7DD3"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/ivSelectedAccount"
+        app:layout_constraintTop_toTopOf="@+id/ivSelectedAccount"
+        android:layout_marginStart="8dp"/>
+<!--    android:text="@string/wallet"-->
+
+    <TextView
+        android:id="@+id/tvSelectedAccountBalance"
+        style="@style/LoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#1D7DD3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSelectedAccount"
+        app:layout_constraintStart_toEndOf="@+id/ivSelectedAccount"
+        android:layout_marginStart="8dp"/>
+<!--    android:text="300"-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/categories"
+        app:layout_constraintTop_toBottomOf="@+id/ivSelectedAccount"
+        android:layout_marginTop="24dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivSelectedAccount"
+            android:inputType="none"
+            android:layout_marginTop="24dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvSelectedCategory"
+        style="@style/CategoriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="text"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/placeholder"
+        android:layout_marginTop="24dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ivSelectedCategory"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_shopping_basket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectedCategory"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/etAmount"
+        style="@style/LoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:hint="@string/enter_amount_of_money"
+        android:textColorHint="@color/black"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivSelectedCategory" />
 
     <Button
-        android:id="@+id/buttonConfirm"
+        android:id="@+id/buttonConfirmAdding"
         style="@style/ButtonTextView"
         android:layout_width="280dp"
         android:layout_height="60dp"
         android:text="@string/confirm"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.1"/>
+        app:layout_constraintTop_toBottomOf="@+id/etAmount"
+        android:layout_marginTop="40dp"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/addingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible" />
+
+
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginBottom="200dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginEnd="20dp"/>-->
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

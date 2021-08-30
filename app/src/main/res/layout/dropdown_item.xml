@@ -1,0 +1,8 @@
+<TextView
+    style="@style/LoginText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="text"
+    android:padding="12dp"
+    android:textStyle="bold"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 class AccountsViewModel(application: Application): AndroidViewModel(application) {
 
     val readAllData: LiveData<List<AccountEntity>>
-    val getSummaryBalance: LiveData<List<Int>>
+    private val getSummaryBalance: LiveData<List<Int>>
     private val repository: AccountsRepository
 
     init {
