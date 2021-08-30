@@ -26,4 +26,19 @@
     <string name="account_error">Fill correctly all the fields</string>
     <string name="select_account_to_pay">Select an account to pay</string>
     <string name="enter_amount_of_money">Enter amount of money</string>
+
+    <string-array name="categoriesArray">
+        <item>Products</item>
+        <item>Cafe</item>
+        <item>Movies</item>
+        <item>Transport</item>
+        <item>Health</item>
+        <item>Gifts</item>
+        <item>Family</item>
+        <item>Shopping</item>
+        <item>Sport</item>
+        <item>Home things</item>
+        <item>Investment</item>
+        <item>Internet</item>
+    </string-array>
 </resources>

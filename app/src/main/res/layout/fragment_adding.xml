@@ -54,16 +54,27 @@
         android:layout_marginStart="8dp"/>
 <!--    android:text="300"-->
 
-    <Button
-        android:id="@+id/buttonSelectingCategory"
-        style="@style/ButtonAccountAdding"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/placeholder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/categories"
         app:layout_constraintTop_toBottomOf="@+id/ivSelectedAccount"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivSelectedAccount"
+            android:inputType="none"
+            android:layout_marginTop="24dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tvSelectedCategory"
@@ -75,7 +86,7 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonSelectingCategory"
+        app:layout_constraintTop_toBottomOf="@id/placeholder"
         android:layout_marginTop="24dp"/>
 
     <androidx.appcompat.widget.AppCompatImageButton
@@ -119,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
 
 <!--        android:layout_marginTop="20dp"-->

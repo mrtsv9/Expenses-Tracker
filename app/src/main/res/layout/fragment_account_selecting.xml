@@ -9,6 +9,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSelectingAccounts"
         tools:listitem="@layout/single_account"
+        app:layout_constraintHeight_max="620dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
