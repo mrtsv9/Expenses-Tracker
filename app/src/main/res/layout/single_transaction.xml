@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDisplayCategory"
+        style="@style/LoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="category"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"/>
+
+     <TextView
+         android:id="@+id/tvDisplayAccount"
+         style="@style/LoginText"
+         android:textSize="16sp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="account"
+         android:layout_marginTop="4dp"
+         android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDisplayBalance"
+        style="@style/LoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

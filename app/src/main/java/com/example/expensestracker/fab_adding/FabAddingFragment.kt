@@ -7,18 +7,25 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.viewModels
 import com.example.expensestracker.R
+import com.example.expensestracker.accounts.AccountsFragment
 import com.example.expensestracker.categories.CategoriesFactory
 import com.example.expensestracker.categories.CategoriesFragment
 import com.example.expensestracker.categories.SingleCategory
 import com.example.expensestracker.database.AccountEntity
+import com.example.expensestracker.database.TransactionEntity
 import com.example.expensestracker.databinding.FragmentAddingBinding
+import com.example.expensestracker.transactions.TransactionsFragment
+import com.example.expensestracker.viewModels.AccountsViewModel
+import com.example.expensestracker.viewModels.TransactionsViewModel
 
 class FabAddingFragment(
     var accountEntity: AccountEntity?
 ) : Fragment() {
 
     private var binding: FragmentAddingBinding? = null
+    private val viewModel: TransactionsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,7 +72,14 @@ class FabAddingFragment(
 
 
     private fun onButtonConfirmClickListener() {
+        val account = binding?.tvSelectedAccountName?.text.toString()
+        val category = binding?.autoCompleteTV?.text.toString()
+        val amount = binding?.etAmount?.text.toString()
+        viewModel.addTransaction(TransactionEntity(1,category, account, Integer.parseInt(amount)))
 
+        val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container, TransactionsFragment())
+            transaction.commit()
     }
 
     override fun onDestroy() {

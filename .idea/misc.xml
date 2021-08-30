@@ -26,9 +26,10 @@
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_profile.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_settings.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_transactions.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/fragment_transactions.xml" value="0.33238636363636365" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/single_account.xml" value="0.33" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/single_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/layout/single_transaction.xml" value="0.31929347826086957" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amart/AndroidStudioProjects/ExpensesTracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.35555555555555557" />
       </map>
