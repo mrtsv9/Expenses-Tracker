@@ -23,5 +23,7 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="enter_account_name">Enter account name</string>
     <string name="enter_account_balance">Enter account balance</string>
-    <string name="account_error">Fill correctly all the fieds</string>
+    <string name="account_error">Fill correctly all the fields</string>
+    <string name="select_account_to_pay">Select an account to pay</string>
+    <string name="enter_amount_of_money">Enter amount of money</string>
 </resources>

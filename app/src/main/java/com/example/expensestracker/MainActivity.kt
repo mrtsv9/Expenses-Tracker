@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
     private fun showFragment() {
         supportFragmentManager.beginTransaction()
             .add(binding.navHostFragment.id, LoginFragment())
-            .addToBackStack(null)
             .commit()
     }
 
     fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.navHostFragment.id, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }

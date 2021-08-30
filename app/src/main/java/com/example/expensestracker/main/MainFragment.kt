@@ -69,7 +69,7 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
 
     private fun onFabClicked() {
         childFragmentManager.beginTransaction()
-            .replace(binding?.container?.id!!, FabAddingFragment())
+            .replace(binding?.container?.id!!, FabAddingFragment(null))
             .commit()
         binding?.tvTitle?.text = resources.getString(R.string.new_transaction)
     }

@@ -5,9 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.expensestracker.R
+import com.example.expensestracker.categories.CategoriesFragment
+import com.example.expensestracker.database.AccountEntity
 import com.example.expensestracker.databinding.FragmentAddingBinding
 
-class FabAddingFragment() : Fragment() {
+class FabAddingFragment(
+    var accountEntity: AccountEntity?
+) : Fragment() {
 
     private var binding: FragmentAddingBinding? = null
 
@@ -23,11 +29,41 @@ class FabAddingFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = binding?.buttonConfirm
-        button?.setOnClickListener { onClickListener() }
+
+        val buttonSelectAccount = binding?.buttonSelectingAccount
+        val buttonSelectCategory = binding?.buttonSelectingCategory
+        val buttonConfirm = binding?.buttonConfirmAdding
+
+        buttonSelectAccount?.setOnClickListener { onButtonSelectAccountClickListener() }
+        buttonSelectCategory?.setOnClickListener { onButtonSelectCategoryClickListener() }
+        buttonConfirm?.setOnClickListener { onButtonConfirmClickListener() }
     }
 
-    private fun onClickListener() {
+    override fun onResume() {
+        super.onResume()
+        if(accountEntity != null) {
+            accountEntity?.image?.let { binding?.ivSelectedAccount?.setImageResource(it) }
+            binding?.tvSelectedAccountName?.text = accountEntity!!.name.toString()
+            binding?.tvSelectedAccountBalance?.text = accountEntity!!.balance.toString()
+        }
+    }
+
+    private fun onButtonSelectAccountClickListener() {
+        val fragment = SelectingAccountFragment()
+        val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container, fragment)
+            transaction.commit()
+    }
+
+    private fun onButtonSelectCategoryClickListener() {
+        val fragment = CategoriesFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.container, fragment)
+            transaction.commit()
+    }
+
+
+    private fun onButtonConfirmClickListener() {
 
     }
 
