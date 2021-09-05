@@ -13,9 +13,13 @@ interface AccountDao {
     @Delete
     suspend fun deleteAccount(account: AccountEntity)
 
+    @Update
+    suspend fun updateAccount(account: AccountEntity)
+
     @Query("SELECT * FROM accounts ORDER BY name ASC")
     fun readAllData(): Flow<List<AccountEntity>>
 
     @Query("SELECT balance FROM accounts")
     fun getSummaryBalance(): Flow<List<Int>>
+
 }

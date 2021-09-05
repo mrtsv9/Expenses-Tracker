@@ -32,4 +32,10 @@ class AccountsViewModel(application: Application): AndroidViewModel(application)
         }
     }
 
+    fun updateAccount(account: AccountEntity) {
+        viewModelScope.launch (Dispatchers.IO) {
+            repository.updateAccount(account)
+        }
+    }
+
 }

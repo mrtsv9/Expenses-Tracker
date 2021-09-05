@@ -13,4 +13,8 @@ class AccountsRepository(private val accountDao: AccountDao) {
         accountDao.addAccount(account)
     }
 
+    suspend fun updateAccount(account: AccountEntity) {
+        accountDao.updateAccount(account)
+    }
+
 }

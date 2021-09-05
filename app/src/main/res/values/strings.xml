@@ -26,6 +26,9 @@
     <string name="account_error">Fill correctly all the fields</string>
     <string name="select_account_to_pay">Select an account to pay</string>
     <string name="enter_amount_of_money">Enter amount of money</string>
+    <string name="overview">Overview of your spendings</string>
+    <string name="update_account">Update account</string>
+    <string name="please_update_the_data">Please update the data</string>
 
     <string-array name="categoriesArray">
         <item>Products</item>

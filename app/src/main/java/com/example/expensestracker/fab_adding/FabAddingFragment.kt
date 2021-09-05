@@ -70,12 +70,11 @@ class FabAddingFragment(
         binding?.autoCompleteTV?.setAdapter(arrayAdapter)
     }
 
-
     private fun onButtonConfirmClickListener() {
         val account = binding?.tvSelectedAccountName?.text.toString()
         val category = binding?.autoCompleteTV?.text.toString()
         val amount = binding?.etAmount?.text.toString()
-        viewModel.addTransaction(TransactionEntity(1,category, account, Integer.parseInt(amount)))
+        viewModel.addTransaction(TransactionEntity(0,category, account, Integer.parseInt(amount)))
 
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.container, TransactionsFragment())
