@@ -82,22 +82,22 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         navView = binding?.bottomNavView
         val container = binding?.container
         when (item.itemId) {
-            2131296510 -> { childFragmentManager.beginTransaction()
+            2131296513 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, AccountsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131296511 -> { childFragmentManager.beginTransaction()
+            2131296514 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, CategoriesFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131296513 -> { childFragmentManager.beginTransaction()
+            2131296516 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, TransactionsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
-            2131296512 -> { childFragmentManager.beginTransaction()
+            2131296515 -> { childFragmentManager.beginTransaction()
                 .replace(container?.id!!, ProfileFragment())
                 .addToBackStack(null)
                 .commit()

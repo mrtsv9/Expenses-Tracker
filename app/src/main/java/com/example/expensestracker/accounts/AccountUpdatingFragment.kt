@@ -17,7 +17,7 @@ import com.example.expensestracker.viewModels.AccountsViewModel
 
 class AccountUpdatingFragment(
     val tvBalance: TextView?,
-    val account: AccountEntity
+    val account: AccountEntity?
     ) : Fragment() {
 
     private var binding: FragmentAccountUpdatingBinding? = null
@@ -38,8 +38,8 @@ class AccountUpdatingFragment(
         val name = binding?.etNewAccountNameUpdate
         val balance = binding?.etNewAccountBalanceUpdate
         name?.isEnabled = false
-        name?.setText(account.name)
-        balance?.setText(account.balance.toString())
+        name?.setText(account?.name)
+        balance?.setText(account?.balance.toString())
 
 
         button?.setOnClickListener { onClickListener() }
@@ -52,7 +52,7 @@ class AccountUpdatingFragment(
         if(checker) {
 
             val balanceAmount: Int = Integer.parseInt(balance?.text.toString())
-            val updatedAccount = AccountEntity(account.name, account.image, balanceAmount)
+            val updatedAccount = AccountEntity(account!!.name, account.image, balanceAmount)
 
             viewModel.updateAccount(updatedAccount)
 
@@ -68,10 +68,6 @@ class AccountUpdatingFragment(
             Toast.makeText(requireContext(), resources.getString(R.string.account_error),
                 Toast.LENGTH_LONG).show()
         }
-    }
-
-    fun updateAccountBalance(balance: Int?) {
-
     }
 
 }

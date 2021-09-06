@@ -1,16 +1,14 @@
 package com.example.expensestracker.viewModels
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.expensestracker.database.AccountDatabase
 import com.example.expensestracker.database.AccountEntity
 import com.example.expensestracker.repositories.AccountsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.Flow
 
 
 class AccountsViewModel(application: Application): AndroidViewModel(application) {
@@ -37,5 +35,14 @@ class AccountsViewModel(application: Application): AndroidViewModel(application)
             repository.updateAccount(account)
         }
     }
+
+//    fun getAccount(name: String): AccountEntity {
+//        val result = AccountEntity
+//        viewModelScope.launch {
+//           val account =  repository.getAccount(name)
+//           result.value = account
+//        }
+//        return result
+//    }
 
 }

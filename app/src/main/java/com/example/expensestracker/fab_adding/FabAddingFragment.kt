@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
 import com.example.expensestracker.R
+import com.example.expensestracker.accounts.AccountUpdatingFragment
 import com.example.expensestracker.accounts.AccountsFragment
 import com.example.expensestracker.categories.CategoriesFactory
 import com.example.expensestracker.categories.CategoriesFragment
@@ -26,6 +27,7 @@ class FabAddingFragment(
 
     private var binding: FragmentAddingBinding? = null
     private val viewModel: TransactionsViewModel by viewModels()
+    private val accountViewModel: AccountsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,7 +76,20 @@ class FabAddingFragment(
         val account = binding?.tvSelectedAccountName?.text.toString()
         val category = binding?.autoCompleteTV?.text.toString()
         val amount = binding?.etAmount?.text.toString()
+
         viewModel.addTransaction(TransactionEntity(0,category, account, Integer.parseInt(amount)))
+        accountViewModel.updateAccount(AccountEntity(binding?.tvSelectedAccountName.toString(),
+            binding?.ivSelectedAccount?.id, Integer.parseInt(amount)))
+//        val selectedAccount = accountViewModel.getAccount(binding?.tvSelectedAccountName.toString())
+//        var tempBalance = selectedAccount.balance
+//        tempBalance = tempBalance?.minus(Integer.parseInt(amount))
+//        selectedAccount.balance = tempBalance
+//        accountViewModel.updateAccount(selectedAccount)
+//
+//        AccountUpdatingFragment(null, null).updateAccountBalance(
+//            binding?.tvSelectedAccountName?.text.toString(), binding?.ivSelectedAccount?.id,
+//            Integer.parseInt(binding?.etAmount?.text.toString())
+//        )
 
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.container, TransactionsFragment())

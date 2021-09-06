@@ -1,5 +1,6 @@
 package com.example.expensestracker.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.expensestracker.database.AccountEntity
 import kotlinx.coroutines.flow.Flow
@@ -21,5 +22,8 @@ interface AccountDao {
 
     @Query("SELECT balance FROM accounts")
     fun getSummaryBalance(): Flow<List<Int>>
+
+    @Query("SELECT * from accounts WHERE name == :accountName LIMIT 1")
+    suspend fun getAccount(accountName: String): AccountEntity
 
 }
