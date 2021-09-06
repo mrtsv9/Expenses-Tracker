@@ -52,7 +52,7 @@ class AccountUpdatingFragment(
         if(checker) {
 
             val balanceAmount: Int = Integer.parseInt(balance?.text.toString())
-            val updatedAccount = AccountEntity(account.name, R.drawable.ic_treasure, balanceAmount)
+            val updatedAccount = AccountEntity(account.name, account.image, balanceAmount)
 
             viewModel.updateAccount(updatedAccount)
 
@@ -68,6 +68,10 @@ class AccountUpdatingFragment(
             Toast.makeText(requireContext(), resources.getString(R.string.account_error),
                 Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun updateAccountBalance(balance: Int?) {
+
     }
 
 }
