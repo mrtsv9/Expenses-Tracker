@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.expensestracker.R
 import com.example.expensestracker.adapters.AccountsAdapter
+import com.example.expensestracker.database.AccountEntity
 import com.example.expensestracker.databinding.FragmentAccountsBinding
 import com.example.expensestracker.viewModels.AccountsViewModel
 
@@ -33,10 +34,11 @@ class AccountsFragment : Fragment() {
         createBaseAccounts()
         val buttonAdd = binding?.ibAddAccount
 
-        val adapter = AccountsAdapter() {}
+        val adapter = AccountsAdapter() { onUpdateClickListener(it) }
         binding?.rvAccounts?.layoutManager = LinearLayoutManager(binding?.root?.context,
             LinearLayoutManager.VERTICAL, false)
         binding?.rvAccounts?.adapter = adapter
+
         viewModel.readAllData.observe(viewLifecycleOwner, Observer {
             adapter.setData(it, binding?.tvBalance)
         })
@@ -60,6 +62,13 @@ class AccountsFragment : Fragment() {
         val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.container, accountAddingFragment)
             transaction.commit()
+    }
+
+    private fun onUpdateClickListener(account: AccountEntity) {
+        val accountUpdatingFragment = AccountUpdatingFragment(binding?.tvBalance, account)
+        val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+        transaction.replace(R.id.container, accountUpdatingFragment)
+        transaction.commit()
     }
 
 }
