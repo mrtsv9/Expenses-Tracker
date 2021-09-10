@@ -1,6 +1,5 @@
 package com.example.expensestracker.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.expensestracker.database.AccountEntity
 import kotlinx.coroutines.flow.Flow
