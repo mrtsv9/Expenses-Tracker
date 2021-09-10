@@ -32,6 +32,8 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         return binding?.root
     }
 
+    ///dasdafwsdefkwqemfkl
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fixBottomNavView()
