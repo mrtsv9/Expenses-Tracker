@@ -32,8 +32,6 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         return binding?.root
     }
 
-    ///dasdafwsdefkwqemfkl
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fixBottomNavView()
@@ -85,7 +83,7 @@ class MainFragment() : Fragment(), BottomNavigationView.OnNavigationItemSelected
         val container = binding?.container
         when (item.itemId) {
             2131296513 -> { childFragmentManager.beginTransaction()
-                .replace(container?.id!!, AccountsFragment())
+                .replace(container?.id!!,       AccountsFragment())
                 .addToBackStack(null)
                 .commit()
                 binding?.tvTitle?.text =  item.title }
